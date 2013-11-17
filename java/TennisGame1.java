@@ -29,17 +29,7 @@ public class TennisGame1 implements TennisGame {
     }
 
     private String getOtherScore() {
-        String score = "";
-        int tempScore;
-        for (int i = 1; i < 3; i++) {
-            if (i == 1) tempScore = scorePlayer1;
-            else {
-                score += "-";
-                tempScore = scorePlayer2;
-            }
-            score += getPlayerOtherScore(tempScore);
-        }
-        return score;
+        return getPlayerOtherScore(scorePlayer1) + "-" + getPlayerOtherScore(scorePlayer2);
     }
 
     private String getPlayerOtherScore(int playerScore) {
