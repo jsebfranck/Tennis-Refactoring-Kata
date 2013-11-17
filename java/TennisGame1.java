@@ -32,11 +32,12 @@ public class TennisGame1 implements TennisGame {
     }
 
     private String getAdvantageOrWinScore() {
-        int minusResult = player1Points - player2Points;
-        if (minusResult == 1) return "Advantage " + player1Name;
-        else if (minusResult == -1) return "Advantage " + player2Name;
-        else if (minusResult >= 2) return "Win for " + player1Name;
-        return "Win for " + player2Name;
+        boolean isVictory = Math.abs(player1Points - player2Points) >= 2;
+        String scoreSuffix = isVictory ? "Win for" : "Advantage";
+
+        String playerWithMorePoints = player1Points > player2Points ? player1Name : player2Name;
+
+        return scoreSuffix + " " + playerWithMorePoints;
     }
 
     private String getEqualityScore() {
