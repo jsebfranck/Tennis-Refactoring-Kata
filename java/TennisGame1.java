@@ -21,7 +21,7 @@ public class TennisGame1 implements TennisGame {
     public String getScore() {
         if (player1Points == player2Points) {
             return getEqualityScore();
-        } else if (player1Points >= 4 || player2Points >= 4) {
+        } else if (player1Points > Points.getMaximumPoints().getPlayerPoints() || player2Points > Points.getMaximumPoints().getPlayerPoints()) {
             return getAdvantageOrWinScore();
         }
         return getOtherScore();

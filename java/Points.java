@@ -33,6 +33,10 @@ public enum Points {
                 return point;
             }
         }
+        return getMaximumPoints();
+    }
+
+    public static Points getMaximumPoints() {
         return Points.FORTY;
     }
 }
