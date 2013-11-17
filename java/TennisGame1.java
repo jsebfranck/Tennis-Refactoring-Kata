@@ -28,21 +28,7 @@ public class TennisGame1 implements TennisGame {
     }
 
     private String getOtherScore() {
-        return getPlayerOtherScore(player1Points) + "-" + getPlayerOtherScore(player2Points);
-    }
-
-    private String getPlayerOtherScore(int playerPoints) {
-        switch (playerPoints) {
-            case 0:
-                return "Love";
-            case 1:
-                return "Fifteen";
-            case 2:
-                return "Thirty";
-            case 3:
-                return "Forty";
-        }
-        return "";
+        return Points.getPoints(player1Points).getScore() + "-" + Points.getPoints(player2Points).getScore();
     }
 
     private String getAdvantageOrWinScore() {
@@ -54,14 +40,6 @@ public class TennisGame1 implements TennisGame {
     }
 
     private String getEqualityScore() {
-        switch (player1Points) {
-            case 0:
-                return "Love-All";
-            case 1:
-                return "Fifteen-All";
-            case 2:
-                return "Thirty-All";
-        }
-        return "Deuce";
+        return Points.getPoints(player1Points).getEqualityScore();
     }
 }
